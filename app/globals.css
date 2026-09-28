@@ -1,0 +1,220 @@
+/* src/app/globals.css */
+
+/* Importar una fuente llamativa para el brutalismo */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #f4f4f0b7;
+  --main-black: #111111;
+  --brutal-yellow: #488311da; /* El color de tu imagen de referencia */
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--main-black);
+  /* Un patrón de cuadrícula sutil de fondo */
+  background-image: linear-gradient(var(--main-black) 1px, transparent 1px),
+    linear-gradient(90deg, var(--main-black) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-color: #fafafa;
+  background-position: -1px -1px;
+}
+
+/* ====================
+   NAVBAR
+   ==================== */
+.navbar {
+  background-color: var(--brutal-yellow);
+  border-bottom: 4px solid var(--main-black);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.nav-links button {
+  background: var(--card-bg);
+  border: 3px solid var(--main-black);
+  padding: 0.5rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--main-black);
+  transition: all 0.1s ease;
+  margin-left: 1rem;
+}
+
+.nav-links button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--main-black);
+}
+
+/* ====================
+   LAYOUT PRINCIPAL
+   ==================== */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ====================
+   BUSCADOR Y FILTROS
+   ==================== */
+.search-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  border: 4px solid var(--main-black);
+  background-color: var(--card-bg);
+  font-weight: 700;
+  box-shadow: 6px 6px 0px var(--main-black);
+  outline: none;
+}
+
+.search-input:focus {
+  background-color: var(--brutal-yellow);
+}
+
+.btn-brutal {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--brutal-yellow);
+  border: 4px solid var(--main-black);
+  box-shadow: 6px 6px 0px var(--main-black);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-brutal:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px var(--main-black);
+}
+
+/* ====================
+   CATÁLOGO DE PRODUCTOS
+   ==================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--card-bg);
+  border: 4px solid var(--main-black);
+  box-shadow: 8px 8px 0px var(--main-black);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  border-bottom: 4px solid var(--main-black);
+  height: 250px;
+  position: relative;
+  background-color: #eee;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%); /* Da un toque más crudo a las fotos */
+}
+
+.product-condition {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--brutal-yellow);
+  border: 3px solid var(--main-black);
+  padding: 0.2rem 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.product-category {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--main-black);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.btn-buy {
+  background-color: white;
+  border: 3px solid var(--main-black);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px var(--main-black);
+  cursor: pointer;
+}
+
+.btn-buy:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--main-black);
+}
