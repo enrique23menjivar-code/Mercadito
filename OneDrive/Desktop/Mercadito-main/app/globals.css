@@ -1,0 +1,120 @@
+/* Paleta de Colores Minimalista */
+:root {
+  --bg-color: #F9F9F7;
+  --card-bg: #FFFFFF;
+  --text-main: #333333;
+  --text-muted: #888888;
+  --accent-color: #FF8BA7;
+  --accent-hover: #FF7496;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 2rem;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Encabezado */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--text-main);
+}
+
+.page-header p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Grid de Productos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Efectos del Botón */
+.gooey-filter {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.btn-container {
+  filter: url('#gooey');
+  display: inline-block;
+}
+
+.btn-comprar {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.25, 1.5, 0.5, 1), background-color 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+/* Squishy Effect (Se aplasta al hacer click) */
+.btn-comprar:active {
+  transform: scale(0.85) scaleY(0.9);
+  background-color: var(--accent-hover);
+}
+
+.btn-comprar:hover {
+  background-color: var(--accent-hover);
+}
